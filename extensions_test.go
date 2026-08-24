@@ -17,6 +17,9 @@ func getTestDir(t *testing.T) string {
 // TestOpenSQLiteDB ensures that extension auto install + load works,
 // as well as some basic C API functions.
 func TestOpenSQLiteDB(t *testing.T) {
+	if grainBuild {
+		t.Skip("the custom DuckDB runtime does not bundle sqlite_scanner; test it through the custom repository separately")
+	}
 	defer VerifyAllocationCounters()
 
 	dsn := getTestDir(t) + "pets.sqlite"
