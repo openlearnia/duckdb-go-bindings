@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Build the bindings against a compatibility-locked custom DuckDB runtime.
+# Build the bindings against the DuckDB 2.0 preview compatibility-locked runtime.
 # DUCKDB_PREFIX must contain include/duckdb.h and lib/libduckdb.{so,dylib}.
 
 prefix="${DUCKDB_PREFIX:?set DUCKDB_PREFIX to the custom DuckDB runtime}"
